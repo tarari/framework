@@ -18,6 +18,7 @@ class View extends \ArrayObject
 
    function __construct($dataview=null,$datatable=null){
     parent::__construct($dataview,\ArrayObject::ARRAY_AS_PROPS);
+
    }
     /**
      * renders template

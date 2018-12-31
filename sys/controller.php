@@ -63,4 +63,14 @@ abstract class Controller
         }
         return true;
     }
+
+    protected function ajax($output){
+        if(is_array($output)){
+            echo json_encode($output);
+        }
+    }
+
+    function error(){
+        $this->msg='Error. Action not defined';
+    }
 }

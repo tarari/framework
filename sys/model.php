@@ -22,6 +22,7 @@ class Model
     {
         //singleton access to DB
         $this->db=DB::getInstance();
+        $this->db->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_WARNING );
     }
 
     public function query($sql){
@@ -29,7 +30,7 @@ class Model
     }
 
     public function bind($param,$value){
-        switch($value){
+        switch(true){
             case is_int($value):
                 $type=\PDO::PARAM_INT;
                 break;
@@ -46,7 +47,7 @@ class Model
     }
 
     public function execute(){
-        $result=$this->stmt->execute;
+        $result=$this->stmt->execute();
         return $result;
     }
     public function resultSet(){
@@ -60,5 +61,8 @@ class Model
     }
     public function lastInsertId(){
         return $this->db->lastInsertId();
+    }
+    public function debugDumpParams(){
+        return $this->stmt->debugDumpParams();
     }
 }

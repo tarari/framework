@@ -1,0 +1,13 @@
+{
+  "app":{
+    "title":"Framework",
+    "version":"1.0"
+  },
+  "dbconf":{
+    "driver": "mysql",
+    "dbhost": "172.17.0.2",
+    "dbname": "todo",
+    "dbuser": "todo",
+    "dbpass": "linuxlinux"
+  }
+}

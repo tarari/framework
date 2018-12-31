@@ -7,6 +7,7 @@
  */
 
 namespace Framework\Sys;
+
 use Framework\Sys\Singleton;
 
 /**
