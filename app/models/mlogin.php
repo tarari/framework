@@ -17,5 +17,26 @@ class mLogin extends Model
         parent::__construct();
     }
 
+    function log($email,$passw){
+
+        $sql="SELECT * FROM user WHERE email=:email";
+        $this->query($sql);
+        $this->bind(":email",$email);
+        $res=$this->execute();
+
+        $user=$this->singleSet();
+
+        if($this->rowCount()!=0){
+
+            if(password_verify($passw,$user['passw'])){
+
+                return $user;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+    }
 
 }

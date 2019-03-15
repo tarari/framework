@@ -20,8 +20,10 @@ class DB extends PDO
    {
        $config=Registry::getInstance();
        $dbconf=(array)$config->dbconf;
+
        //$dsn driver:host=
        $dsn=$dbconf['driver'].':host='.$dbconf['dbhost'].';dbname='.$dbconf['dbname'];
+      
        $username=$dbconf['dbuser'];
        $passwd=$dbconf['dbpass'];
        try {

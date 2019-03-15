@@ -25,13 +25,13 @@ class Home extends Controller
       ]);
       $this->model=new mHome();
       $this->view=new vHome($this->dataView,$this->dataTable);
-      $this->view->show();
+
 
 
 
   }
   function home(){
-
+      $this->view->show();
 
   }
 }

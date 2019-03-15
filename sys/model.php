@@ -22,7 +22,7 @@ class Model
     {
         //singleton access to DB
         $this->db=DB::getInstance();
-        $this->db->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_WARNING );
+        //$this->db->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_WARNING );
     }
 
     public function query($sql){

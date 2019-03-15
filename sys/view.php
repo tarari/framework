@@ -14,11 +14,21 @@ namespace Framework\Sys;
  */
 class View extends \ArrayObject
 {
+    /**
+     * @var string $output  contains html output
+     * @var array $dataTable contais data array table for template transforming
+     */
+
     protected $output;
 
-   function __construct($dataview=null,$datatable=null){
-    parent::__construct($dataview,\ArrayObject::ARRAY_AS_PROPS);
+    protected $dataTable;
 
+   function __construct($dataView=null,$dataTable=null){
+       //
+    parent::__construct($dataView,\ArrayObject::ARRAY_AS_PROPS);
+    if($dataTable!=null){
+        $this->dataTable=$dataTable;
+    }
    }
     /**
      * renders template

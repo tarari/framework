@@ -32,6 +32,7 @@ abstract class Controller
         $this->app=(array)$this->conf->app;
         $this->dataView=$dataView;
         $this->addData($this->app);
+
     }
 
     /**

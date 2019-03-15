@@ -69,8 +69,11 @@ class Registry
      */
     function loadConf(){
         $fileconf=APP.'config.json';
+
         $jsonstr=file_get_contents($fileconf);
+
         $arrayJson=json_decode($jsonstr);
+
         foreach ($arrayJson as $key =>$value) {
             $this->data[$key]=$value;
         }

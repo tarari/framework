@@ -12,9 +12,9 @@ use Framework\Sys\View;
 
 class vHome extends View{
 
-    public function __construct($dataview = null,$datatable=null)
+    public function __construct($dataView = null,$dataVable=null)
     {
-        parent::__construct($dataview,$datatable);
+        parent::__construct($dataView,$dataVable);
         $this->output=$this->render('thome.php');
     }
 
