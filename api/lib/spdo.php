@@ -7,9 +7,11 @@ class Spdo extends \PDO {
 	static  $instance;
 	static $config=array();
 	function __construct(){
-		$dsn = 'mysql:dbname=todo;host=172.17.0.2';
-		$usr ='todo';
-		$pwd = 'linuxlinux';
+	    $config=json_decode(file_get_contents(ROOT.'config.json'),true);
+
+		$dsn = $config['dbconf']['driver'].':dbname='.$config['dbconf']['dbname'].';host='.$config['dbconf']['dbhost'];
+		$usr =$config['dbconf']['dbuser'];
+		$pwd = $config['dbconf']['dbpass'];
 		try{
 		 		parent::__construct($dsn,$usr,$pwd);
 		 	}catch(PDOException $e){
