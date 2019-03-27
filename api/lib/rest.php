@@ -18,8 +18,12 @@
 		function __construct(){
 			$request = new Request();
 
-			if (isset($_SERVER['PATH_INFO'])) {
-			    $request->url_elements = explode('/', trim($_SERVER['PATH_INFO'], '/'));
+			if (isset($_SERVER['REQUEST_URI'])) {
+			    $req=explode('/',trim($_SERVER['REQUEST_URI'],'/'));
+			    array_shift( $req);
+
+                $request->url_elements = $req;
+
 			}
 			$request->method = strtoupper($_SERVER['REQUEST_METHOD']);
 			switch ($request->method) {
